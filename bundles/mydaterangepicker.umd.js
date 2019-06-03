@@ -745,7 +745,15 @@ var MyDateRangePicker = (function () {
         return this.daysInMonth(d.getMonth() + 1, d.getFullYear());
     };
     MyDateRangePicker.prototype.isCurrDay = function (d, m, y, cmo, today) {
-        return d === today.day && m === today.month && y === today.year && cmo === this.currMonthId;
+        if (m + 1 === today.month) {
+            return d === today.day && y === today.year && cmo === this.nextMonthId;
+        }
+        else if (m - 1 === today.month) {
+            return d === today.day && y === today.year && cmo === this.prevMonthId;
+        }
+        else if (m === today.month) {
+            return d === today.day && m === today.month && y === today.year && cmo === this.currMonthId;
+        }
     };
     MyDateRangePicker.prototype.getPreviousDate = function (date) {
         var d = this.getDate(date);
