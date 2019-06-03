@@ -4,5 +4,4 @@ export interface IMyCalendarMonth {
     currMonth: boolean;
     selected: boolean;
     disabled: boolean;
-    setBackground: boolean;
 }

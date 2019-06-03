@@ -6,5 +6,4 @@ export interface IMyCalendarDay {
     dayNbr: number;
     disabled: boolean;
     range: boolean;
-    setBackground: boolean;
 }
